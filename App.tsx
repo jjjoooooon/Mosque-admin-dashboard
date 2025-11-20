@@ -14,6 +14,7 @@ import { CurrencyProvider } from './context/CurrencyContext';
 import { SettingsProvider } from './context/SettingsContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
+import { NotificationProvider } from './context/NotificationContext';
 import { Loader2 } from 'lucide-react';
 
 const Layout = ({ children }: React.PropsWithChildren) => {
@@ -54,51 +55,53 @@ const App = () => {
       <ThemeProvider>
         <SettingsProvider>
           <CurrencyProvider>
-            <HashRouter>
-              <Routes>
-                {/* Public Routes */}
-                <Route path="/login" element={<Login />} />
-                <Route path="/forgot-password" element={<ForgotPassword />} />
-                <Route path="/reset-password" element={<ResetPassword />} />
+            <NotificationProvider>
+              <HashRouter>
+                <Routes>
+                  {/* Public Routes */}
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/forgot-password" element={<ForgotPassword />} />
+                  <Route path="/reset-password" element={<ResetPassword />} />
 
-                {/* Protected Routes */}
-                <Route path="/" element={
-                  <ProtectedRoute>
-                    <Layout>
-                      <Dashboard />
-                    </Layout>
-                  </ProtectedRoute>
-                } />
-                <Route path="/donations" element={
-                  <ProtectedRoute>
-                    <Layout>
-                      <Donations />
-                    </Layout>
-                  </ProtectedRoute>
-                } />
-                <Route path="/videos" element={
-                  <ProtectedRoute>
-                    <Layout>
-                      <Videos />
-                    </Layout>
-                  </ProtectedRoute>
-                } />
-                <Route path="/announcements" element={
-                  <ProtectedRoute>
-                    <Layout>
-                      <Announcements />
-                    </Layout>
-                  </ProtectedRoute>
-                } />
-                <Route path="/settings" element={
-                  <ProtectedRoute>
-                    <Layout>
-                      <Settings />
-                    </Layout>
-                  </ProtectedRoute>
-                } />
-              </Routes>
-            </HashRouter>
+                  {/* Protected Routes */}
+                  <Route path="/" element={
+                    <ProtectedRoute>
+                      <Layout>
+                        <Dashboard />
+                      </Layout>
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/donations" element={
+                    <ProtectedRoute>
+                      <Layout>
+                        <Donations />
+                      </Layout>
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/videos" element={
+                    <ProtectedRoute>
+                      <Layout>
+                        <Videos />
+                      </Layout>
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/announcements" element={
+                    <ProtectedRoute>
+                      <Layout>
+                        <Announcements />
+                      </Layout>
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/settings" element={
+                    <ProtectedRoute>
+                      <Layout>
+                        <Settings />
+                      </Layout>
+                    </ProtectedRoute>
+                  } />
+                </Routes>
+              </HashRouter>
+            </NotificationProvider>
           </CurrencyProvider>
         </SettingsProvider>
       </ThemeProvider>
