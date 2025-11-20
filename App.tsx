@@ -5,6 +5,7 @@ import { Header } from './components/Header';
 import { Dashboard } from './pages/Dashboard';
 import { Donations } from './pages/Donations';
 import { Videos } from './pages/Videos';
+import { Lectures } from './pages/Lectures';
 import { Announcements } from './pages/Announcements';
 import { Settings } from './pages/Settings';
 import { Login } from './pages/Login';
@@ -82,6 +83,13 @@ const App = () => {
                     <ProtectedRoute>
                       <Layout>
                         <Videos />
+                      </Layout>
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/lectures" element={
+                    <ProtectedRoute>
+                      <Layout>
+                        <Lectures />
                       </Layout>
                     </ProtectedRoute>
                   } />

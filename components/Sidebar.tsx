@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, DollarSign, Video, Megaphone, Settings, LogOut, Moon } from 'lucide-react';
+import { LayoutDashboard, DollarSign, Video, Megaphone, Settings, LogOut, Moon, BookOpen } from 'lucide-react';
 import { cn } from './ui';
 import { NavItem } from '../types';
 import { useSettings } from '../context/SettingsContext';
@@ -10,6 +10,7 @@ const navItems: NavItem[] = [
   { label: 'Dashboard', icon: LayoutDashboard, path: '/' },
   { label: 'Donations', icon: DollarSign, path: '/donations' },
   { label: 'Videos', icon: Video, path: '/videos' },
+  { label: 'Lectures', icon: BookOpen, path: '/lectures' },
   { label: 'Announcements', icon: Megaphone, path: '/announcements' },
   { label: 'Settings', icon: Settings, path: '/settings' },
 ];

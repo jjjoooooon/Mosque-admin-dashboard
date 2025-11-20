@@ -44,3 +44,14 @@ export interface Notification {
   read: boolean;
   link?: string;
 }
+
+export interface Lecture {
+  id: string;
+  title: string;
+  speaker: string;
+  date: string;
+  time: string;
+  category: 'Khutbah' | 'Tafseer' | 'Bayan' | 'Event';
+  description?: string;
+  status: 'Upcoming' | 'Completed' | 'Cancelled';
+}
