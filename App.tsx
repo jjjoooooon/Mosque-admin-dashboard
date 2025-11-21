@@ -25,7 +25,8 @@ const Layout = ({ children }: React.PropsWithChildren) => {
       <div className="flex-1 flex flex-col h-screen overflow-hidden">
         <Header />
         <main className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
-            {children}
+          {children}
+
         </main>
       </div>
     </div>
@@ -34,7 +35,7 @@ const Layout = ({ children }: React.PropsWithChildren) => {
 
 const ProtectedRoute = ({ children }: React.PropsWithChildren) => {
   const { isAuthenticated, isLoading } = useAuth();
-  
+
   if (isLoading) {
     return (
       <div className="h-screen w-full flex items-center justify-center bg-slate-50 dark:bg-slate-950 text-slate-400">
@@ -42,11 +43,11 @@ const ProtectedRoute = ({ children }: React.PropsWithChildren) => {
       </div>
     );
   }
-  
+
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
-  
+
   return <>{children}</>;
 };
 

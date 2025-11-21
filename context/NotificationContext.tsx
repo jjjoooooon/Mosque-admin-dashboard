@@ -29,7 +29,7 @@ export const NotificationProvider = ({ children }: React.PropsWithChildren) => {
   }, []);
 
   const markAsRead = useCallback((id: string) => {
-    setNotifications(prev => 
+    setNotifications(prev =>
       prev.map(n => n.id === id ? { ...n, read: true } : n)
     );
   }, []);
@@ -52,32 +52,32 @@ export const NotificationProvider = ({ children }: React.PropsWithChildren) => {
     if (notifications.length === 0) {
       addNotification({
         title: 'System Update',
-        message: 'Welcome to the new Noor Masjid Admin Dashboard v2.0.',
+        message: 'Welcome to the new Jummah Grand Mosque Admin Dashboard.',
         type: 'info'
       });
     }
 
     // Simulate a random donation every 60 seconds
     const interval = setInterval(() => {
-        const randomAmount = Math.floor(Math.random() * 500) + 10;
-        addNotification({
-            title: 'New Donation Received',
-            message: `Received $${randomAmount} from an anonymous donor.`,
-            type: 'success',
-            link: '/donations'
-        });
+      const randomAmount = Math.floor(Math.random() * 500) + 10;
+      addNotification({
+        title: 'New Donation Received',
+        message: `Received $${randomAmount} from an anonymous donor.`,
+        type: 'success',
+        link: '/donations'
+      });
     }, 60000);
 
     return () => clearInterval(interval);
   }, [addNotification]); // Removed notifications dependency to prevent infinite loop on mount
 
   return (
-    <NotificationContext.Provider value={{ 
-      notifications, 
-      unreadCount, 
-      addNotification, 
-      markAsRead, 
-      markAllAsRead, 
+    <NotificationContext.Provider value={{
+      notifications,
+      unreadCount,
+      addNotification,
+      markAsRead,
+      markAllAsRead,
       clearAll,
       removeNotification
     }}>
