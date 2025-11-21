@@ -10,7 +10,7 @@ const navItems: NavItem[] = [
   { label: 'Dashboard', icon: LayoutDashboard, path: '/' },
   { label: 'Donations', icon: DollarSign, path: '/donations' },
   { label: 'Videos', icon: Video, path: '/videos' },
-  { label: 'Lectures', icon: BookOpen, path: '/lectures' },
+  // { label: 'Lectures', icon: BookOpen, path: '/lectures' },
   { label: 'Announcements', icon: Megaphone, path: '/announcements' },
   { label: 'Settings', icon: Settings, path: '/settings' },
 ];
@@ -60,7 +60,7 @@ export const Sidebar = () => {
       </nav>
 
       <div className="p-4 border-t border-slate-100 dark:border-slate-800">
-        <button 
+        <button
           onClick={logout}
           className="flex w-full items-center gap-3 px-4 py-3 text-sm font-medium text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20 rounded-lg transition-colors"
         >
