@@ -10,8 +10,8 @@ const navItems: NavItem[] = [
   { label: 'Dashboard', icon: LayoutDashboard, path: '/' },
   { label: 'Donations', icon: DollarSign, path: '/donations' },
   { label: 'Videos', icon: Video, path: '/videos' },
-  // { label: 'Lectures', icon: BookOpen, path: '/lectures' },
-  { label: 'Announcements', icon: Megaphone, path: '/announcements' },
+  { label: 'Lectures', icon: BookOpen, path: '/lectures' },
+  // { label: 'Announcements', icon: Megaphone, path: '/announcements' },
   { label: 'Settings', icon: Settings, path: '/settings' },
 ];
 
